@@ -3,12 +3,14 @@
 
 
 void DFSUntil1(int v, bool visited[]) {
-    for(auto itr: adj[v]) {
-        if(visited[v] == 0) {
-        	visited[v] = 1;
-        	DFSUntil1(itr, visited);
-        }
-    }
+	if(visited[v] == false) {
+		visited[v] = 1;
+	    for(auto itr: adj[v]) {
+	        if(visited[itr] == 0) {
+	        	DFSUntil1(itr, visited);
+	        }
+	    }
+	}
 }
 
 void DFS() {
