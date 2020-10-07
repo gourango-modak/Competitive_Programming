@@ -1,6 +1,6 @@
 # Competitive_Programming
 
-# C++ Single File Compile In Sublime Text
+### C++ Single File Compile In Sublime Text
 
 
 ```
@@ -14,7 +14,7 @@
 
 ```
 
-# C++ Multiple File Compile In Sublime Text
+### C++ Multiple File Compile In Sublime Text
 
 ```
 

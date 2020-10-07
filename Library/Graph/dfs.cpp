@@ -5,7 +5,7 @@
 void DFSUntil1(int v, bool visited[]) {
 	if(visited[v] == false) {
 		visited[v] = 1;
-	    for(auto itr: adj[v]) {
+	    for(auto itr: graph[v]) {
 	        if(visited[itr] == 0) {
 	        	DFSUntil1(itr, visited);
 	        }
@@ -41,4 +41,23 @@ void DFS(int i, int j, int time, bool visited[][201]) {
 			}
 		}
 	}
+}
+
+
+
+
+
+
+
+// DFS with DP
+
+vi nodes(MAX, -1);
+
+int DFSUntil1(int v, int nodeCounts) {
+	if(nodes[v] != -1) return nodes[v];
+	nodeCounts = 0;
+    for(auto itr: graph[v]) {
+        nodeCounts = max(nodeCounts, 1 + DFSUntil1(itr, nodeCounts));
+    }
+ 	return nodes[v] = nodeCounts;
 }

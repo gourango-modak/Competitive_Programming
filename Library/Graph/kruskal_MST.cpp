@@ -4,13 +4,13 @@
 pair<int, pii> graph[1000];
 
 
-ll MST(std::pair<int, pii> g[], int noOfEdges) {
+ll MST(int noOfEdges) {
 	ll minimumCost = 0;
 	fo(0, noOfEdges) {
-		int u = g[i].second.first;
-		int v = g[i].second.second;
+		int u = graph[i].second.first;
+		int v = graph[i].second.second;
 		if(find(u) != find(v)) {
-			minimumCost += g[i].first;
+			minimumCost += graph[i].first;
 			union_Set(u,v);
 		}
 	}

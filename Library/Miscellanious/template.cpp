@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define fo(k,n) for(int i=k;i<n;i++)
+#define fv(i,n) for(int i=0;i<n;i++)
 #define ll long long
 #define PI 3.1415926535897932384626
 #define INF 0x3f3f3f3f
