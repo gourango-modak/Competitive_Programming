@@ -12,14 +12,13 @@ void BFS(int start, int end) {
     queue<int> q;
 
     q.push(start);
+    visited[start] = 1;
 
     while(!q.empty()) {
         int vertex = q.front();
         q.pop();
 
         if(vertex == end) break;
-
-        visited[vertex] = 1;
 
         for(auto ele: adj[vertex]) {
             if(visited[ele] == false) {
@@ -51,14 +50,13 @@ void BFS(int i, int j) {
     
     queue<pii> q;
     q.push(make_pair(i,j));
+    visited[i][j] = 1;
  
     while(!q.empty()) {
         int x = q.front().first;
         int y = q.front().second;
  
         q.pop();
- 
-        visited[x][y] = 1;
 
         fo(i, 4) {
             if(isValid(x+dx[i], y+dy[i], k)) {
