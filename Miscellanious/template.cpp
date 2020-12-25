@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define rep(i,k,n) for(int i=k;i<n;i++)
 #define ll long long

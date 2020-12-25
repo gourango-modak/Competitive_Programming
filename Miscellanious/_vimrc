@@ -1,0 +1,57 @@
+call plug#begin('~/.vim/plugged')
+	Plug 'morhetz/gruvbox'
+call plug#end()
+
+
+nnoremap <silent> .cpp :-1read C:\Users\GOURANGO MODAK\Downloads\Competitive_Programming\Library\Miscellanious\temp.cpp<CR>15jwf{
+
+"Navigate Panel
+
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+
+set path+=C:/Users/GOURANGO\\\ MODAK/Downloads/Competitive_Programming/**
+"set path+=~/**
+"set path+=~/Downloads/Competitive_Programming/**
+colorscheme gruvbox
+set background=dark
+set cursorline
+syntax on
+set smartcase ignorecase
+set scrolloff=10
+set noerrorbells
+set autoindent
+set copyindent
+set wrap
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set incsearch
+set clipboard=unnamed
+set encoding=utf-8
+set backspace=2
+set nu
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h14:cANSI
+    map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+
+    "Full screen mode
+
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+  endif
+endif
+
+
+nnoremap <silent> <C-b> :!g++ -Wshadow -Wall % -o %:r -std=c++17 && %:r <CR>
+"nnoremap <silent> <F9> :!%:r<CR>

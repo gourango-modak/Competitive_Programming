@@ -61,3 +61,31 @@ int DFSUntil1(int v, int nodeCounts) {
     }
  	return nodes[v] = nodeCounts;
 }
+
+
+// Cycle Detection and Store all vertex
+
+void DFS(int node, int parent) {
+	visited[node] = true;
+	for(auto child: graph[node]) {
+
+		if(child == parent) continue;
+
+		if(!visited[child]) {
+			par[child] = node;
+			DFS(child, node);
+			if(cycle_found) return;
+		}
+		else {
+			int cur = node;
+			while(child != cur) {
+				if(cur == 0) break;
+				cycle.pb(cur);
+				cur = par[cur];
+			}
+			cycle.pb(cur);
+			cycle_found = 1;
+			return;
+		}
+	}
+}
