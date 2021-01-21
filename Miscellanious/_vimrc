@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 
-nnoremap <silent> .cpp :-1read C:\Users\GOURANGO MODAK\Downloads\Competitive_Programming\Library\Miscellanious\temp.cpp<CR>15jwf{
+nnoremap <silent> .cpp :-1read C:\Users\GOURANGO MODAK\Downloads\Competitive_Programming\Miscellanious\temp.cpp<CR>6jwf{
 
 "Navigate Panel
 
@@ -12,9 +12,30 @@ nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 
+set wildmenu
 set path+=C:/Users/GOURANGO\\\ MODAK/Downloads/Competitive_Programming/**
-"set path+=~/**
-"set path+=~/Downloads/Competitive_Programming/**
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Splits and Tabbed Files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow splitright
+
+
+" Remap ESC to ii
+:imap ii <Esc>
+
+set laststatus=2
+set statusline=
+set statusline +=%*\ %n\ %*            "buffer number
+set statusline+=%#LineNr#
+set statusline +=%4*\ %<%F            "full path
+set statusline+=%=
+set statusline+=%#LineNr#
+set statusline+=\ %p%%
+set statusline+=\ %l
+set statusline+=\ 
+
 colorscheme gruvbox
 set background=dark
 set cursorline
@@ -53,5 +74,6 @@ if has("gui_running")
 endif
 
 
-nnoremap <silent> <C-b> :!g++ -Wshadow -Wall % -o %:r -std=c++17 && %:r <CR>
-"nnoremap <silent> <F9> :!%:r<CR>
+nnoremap <silent> <C-b> :!g++ -std=c++17 % -o %:r<CR>
+nnoremap <silent> <C-p> :!%:r <CR>
+nnoremap <silent> cwd :cd ./Downloads/Competitive_Programming/Problems/<CR>

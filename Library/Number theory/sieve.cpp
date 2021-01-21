@@ -1,30 +1,28 @@
 
-void SieveOfEratosthenes() 
+void sieve() 
 {
     bool prime[MAX+1]; 
     memset(prime, true, sizeof(prime)); 
   
-    for (int p=2; p*p<=MAX; p++) 
-    {
-        if (prime[p] == true) 
-        {
+    for (int p=2; p*p<=MAX; p++) {
+        if (prime[p] == true) {
             for (int i=p*p; i<=MAX; i += p) 
                 prime[i] = false; 
         } 
     }
     for (int p=2; p<=MAX; p++) 
-       if (prime[p]) 
-          cout << p << " ";
+        if (prime[p]) 
+            cout << p << " ";
 }
 
 
 // Segment Sieve
 
-void SieveRange(int low, int high)
+void sieveRange(int low, int high)
 {
     int limit = floor(sqrt(high)) + 1;
     vector<int> prime;
-    simpleSieve(limit, prime);
+    sieve(limit, prime); // simple sieve to generate all primes up to limits
  
     int n = high - low + 1;
  
